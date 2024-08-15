@@ -1,11 +1,9 @@
 import {Text, View, Image} from 'react-native';
 
-
-export default function ClickState() {
+export default function StateQuiz() {
     return(
         <View>
-            <Text>Click the state</Text>
+            <Text>Pick the correct answer</Text>
         </View>
     )
-    
 }

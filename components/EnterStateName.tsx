@@ -1,11 +1,9 @@
 import {Text, View, Image} from 'react-native';
 
-
-export default function ClickState() {
+export default function EnterStateName(){
     return(
         <View>
-            <Text>Click the state</Text>
+            <Text>Enter the state name</Text>
         </View>
     )
-    
 }
