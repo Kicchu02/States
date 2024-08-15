@@ -1,10 +1,10 @@
-import React from 'react';
-import {Text, View, Image} from 'react-native';
+import React from "react";
+import { Image, Text, View } from "react-native";
 
 export default function ClickCorrectStatePage() {
-    return(
-        <View>
-            <Text>Click the state</Text>
-        </View>
-    );
+  return (
+    <View>
+      <Text>Click the state</Text>
+    </View>
+  );
 }
