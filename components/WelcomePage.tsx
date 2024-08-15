@@ -1,3 +1,9 @@
+import { Text, View } from "react-native";
+
 export default function WelcomePage() {
-  return <div>WelcomePage</div>;
+  return (
+    <View>
+      <Text>Welcome Page</Text>
+    </View>
+  );
 }
