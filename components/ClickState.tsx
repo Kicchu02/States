@@ -6,5 +6,6 @@ export default function ClickState() {
         <View>
             <Text>Click the state</Text>
         </View>
-    )  
+    )
 }
+
