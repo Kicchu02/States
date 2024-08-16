@@ -1,33 +1,31 @@
 import { StyleSheet } from "react-native";
+import { Color } from "./types/Themes";
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: "#FFF7E6",
+    backgroundColor: Color.Beige,
     paddingVertical: 50,
     paddingHorizontal: 20,
     justifyContent: "center",
   },
   buttonStyle: {
-    // TODO: Add generic button style for touchable opacity component
-    backgroundColor: "#FFC1C1",
+    backgroundColor: Color.Babypink,
     marginTop: 20,
-    margin: 40,
+    margin: 55,
     padding: 20,
     borderRadius: 40,
   },
   butonTextStyle: {
-    //TODO
-    color: "#4A4A4A", // dark grey
+    color: Color.Darkgrey,
     textAlign: "center",
     fontSize: 20,
   },
   textHeaderStyle: {
-    // TODO
     textAlign: "center",
     fontSize: 35,
-    marginTop: 200,
+    marginTop: 150,
     marginBottom: 50,
-    color: "#FF6F61",
+    color: Color.Softcoral,
     fontWeight: "bold",
   },
 });
