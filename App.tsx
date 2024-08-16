@@ -1,11 +1,13 @@
-import React from "react"; // Import React with capital 'R'
-import { StatusBar } from "expo-status-bar"; // Import StatusBar
-import { StyleSheet, Text, View } from "react-native"; // Import other components
-import WelcomePage from "./components/WelcomePage"; // Import your component
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import WelcomePage from "./components/WelcomePage";
+import "./src/styles";
+import styles from "./src/styles";
 
 export default function App() {
   return (
-    <View>
+    <View style={styles.container}>
       <WelcomePage />
       <StatusBar style="auto" />
     </View>
