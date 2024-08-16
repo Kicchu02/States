@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  ImageBackground,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import style from "../styles";
 
 export default function WelcomePage() {
