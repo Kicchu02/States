@@ -4,8 +4,8 @@ import { colors } from "./types/Themes";
 const style = StyleSheet.create({
   container: {
     backgroundColor: colors.beige,
-    paddingVertical: 50,
-    paddingHorizontal: 20,
+    flex: 1,
+    flexDirection: "column",
     justifyContent: "center",
   },
   buttonStyle: {

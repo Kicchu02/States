@@ -5,7 +5,7 @@ import StyledButton from "../ui-components/StyledButton";
 
 export default function WelcomePage() {
   return (
-    <View style={style.container}>
+    <View>
       <Text style={style.textHeaderStyle}>WELCOME TO STATES APP!</Text>
       <StyledButton text="Select State" />
       <StyledButton text="Enter State" />
