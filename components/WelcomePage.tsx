@@ -1,10 +1,15 @@
 import React from "react";
 import { Text, View } from "react-native";
+import style from "../Styles";
+import StyledButton from "../ui-components/StyledButton";
 
 export default function WelcomePage() {
   return (
     <View>
-      <Text>Welcome Page</Text>
+      <Text style={style.textHeaderStyle}>WELCOME TO STATES APP!</Text>
+      <StyledButton text="Select State" />
+      <StyledButton text="Enter State" />
+      <StyledButton text="States Quiz" />
     </View>
   );
 }
