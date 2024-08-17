@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import style from "../styles";
+import style from "../Styles";
 
 export default function WelcomePage() {
   return (
