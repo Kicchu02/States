@@ -1,22 +1,22 @@
 import { StyleSheet } from "react-native";
-import { Color } from "./types/Themes";
+import { colors } from "./types/Themes";
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: Color.Beige,
+    backgroundColor: colors.beige,
     paddingVertical: 50,
     paddingHorizontal: 20,
     justifyContent: "center",
   },
   buttonStyle: {
-    backgroundColor: Color.Babypink,
+    backgroundColor: colors.babyPink,
     marginTop: 20,
     margin: 55,
     padding: 20,
     borderRadius: 40,
   },
   butonTextStyle: {
-    color: Color.Darkgrey,
+    color: colors.darkGray,
     textAlign: "center",
     fontSize: 20,
   },
@@ -25,7 +25,7 @@ const style = StyleSheet.create({
     fontSize: 35,
     marginTop: 150,
     marginBottom: 50,
-    color: Color.Softcoral,
+    color: colors.softCoral,
     fontWeight: "bold",
   },
 });
