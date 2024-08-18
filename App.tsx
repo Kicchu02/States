@@ -1,13 +1,36 @@
+import "./gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import WelcomePage from "./components/WelcomePage";
-import style from "./Styles";
+import ClickCorrectStatePage from "./components/ClickCorrectStatePage";
+import EnterCorrectStateNamePage from "./components/EnterCorrectStateNamePage";
+import StateMultipleChoiceQuizPage from "./components/StateMultipleChoiceQuizPage";
 
 export default function App() {
+  const Stack = createStackNavigator();
+
   return (
-    <View style={style.container}>
-      <WelcomePage />
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+      <Stack.Navigator
+        initialRouteName="WelcomePage"
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="WelcomePage" component={WelcomePage} />
+        <Stack.Screen
+          name="ClickCorrectStatePage"
+          component={ClickCorrectStatePage}
+        />
+        <Stack.Screen
+          name="EnterCorrectStateNamePage"
+          component={EnterCorrectStateNamePage}
+        />
+        <Stack.Screen
+          name="StateMultipleChoiceQuizPage"
+          component={StateMultipleChoiceQuizPage}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
