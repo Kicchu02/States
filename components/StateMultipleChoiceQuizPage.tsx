@@ -46,7 +46,7 @@ export default function StateMultipleChoiceQuizApp() {
               key={option}
               title={option}
               onPress={() => handleAnswer(option)}
-            ></Button>
+            />
           ))}
         </View>
       )}
