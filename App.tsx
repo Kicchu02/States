@@ -13,7 +13,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <Stack.Navigator initialRouteName="WelcomePage">
+      <Stack.Navigator
+        initialRouteName="WelcomePage"
+        screenOptions={{ headerShown: false }}
+      >
         <Stack.Screen name="WelcomePage" component={WelcomePage} />
         <Stack.Screen
           name="ClickCorrectStatePage"
