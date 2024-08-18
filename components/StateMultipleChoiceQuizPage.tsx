@@ -24,7 +24,9 @@ export default function StateMultipleChoiceQuizApp() {
       {quizFinished ? (
         <View>
           <Text>Quiz Finished</Text>
-          <Text>Your Score: {score}</Text>
+          <Text>
+            Your Score: {score} Out of: {quizQuestions.length}
+          </Text>
         </View>
       ) : (
         <View>
