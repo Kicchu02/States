@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View, Button } from "react-native";
 import { Question } from "../types/Question";
 import { quizQuestions } from "../types/Question";
@@ -7,7 +7,17 @@ export default function StateMultipleChoiceQuizApp() {
   const [currentQuestionIndex, setCurrentQuestion] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [quizFinished, setQuizFinished] = useState<boolean>(false);
-  const currentQuestion: Question = quizQuestions[currentQuestionIndex];
+  const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
+
+  useEffect(() => {
+    const shuffled = [...quizQuestions].sort(() => Math.random() - 0.5);
+    setShuffledQuestions(shuffled);
+  }, []);
+  const currentQuestion: Question = shuffledQuestions[currentQuestionIndex] || {
+    questionText: "",
+    option: [],
+    correctAnswer: "",
+  };
   const handleAnswer = (selectedOption: string) => {
     if (selectedOption === currentQuestion.correctAnswer) {
       setScore(score + 1);
