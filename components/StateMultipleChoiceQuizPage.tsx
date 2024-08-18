@@ -1,27 +1,13 @@
-import { useTheme } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Text, View, Button } from "react-native";
+import { Question } from "../types/Question";
+import { quizQuestions } from "../types/Question";
 
-type Question = {
-  questionText: string;
-  option: string[];
-  correctAnswer: string;
-};
-const quizQuestions: Question[] = [
-  {
-    questionText: "What is Karnataka's capital?",
-    option: ["Bangalore", "Chennai", "Hyderabad", "Raipur"],
-    correctAnswer: "Bangalore",
-  },
-];
-
-const StateMultipleChoiceQuizApp: React.FC = () => {
+export default function StateMultipleChoiceQuizApp() {
   const [currentQuestionIndex, setCurrentQuestion] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [quizFinished, setQuizFinished] = useState<boolean>(false);
-
-  const currentQuestion = quizQuestions[currentQuestionIndex];
-
+  const currentQuestion: Question = quizQuestions[currentQuestionIndex];
   const handleAnswer = (selectedOption: string) => {
     if (selectedOption === currentQuestion.correctAnswer) {
       setScore(score + 1);
@@ -32,6 +18,7 @@ const StateMultipleChoiceQuizApp: React.FC = () => {
       setQuizFinished(true);
     }
   };
+
   return (
     <View>
       {quizFinished ? (
@@ -53,5 +40,4 @@ const StateMultipleChoiceQuizApp: React.FC = () => {
       )}
     </View>
   );
-};
-export default StateMultipleChoiceQuizApp;
+}
