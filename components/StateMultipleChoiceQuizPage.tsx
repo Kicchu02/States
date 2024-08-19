@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, Button } from "react-native";
-import { Question } from "../types/Question";
-import { quizQuestions } from "../types/Question";
+import { Question } from "../types/QuizQuestions";
+import { quizQuestions } from "../types/QuizQuestions";
 
 export default function StateMultipleChoiceQuizApp() {
   const [currentQuestionIndex, setCurrentQuestion] = useState<number>(0);
@@ -13,11 +13,13 @@ export default function StateMultipleChoiceQuizApp() {
     const shuffled = [...quizQuestions].sort(() => Math.random() - 0.5);
     setShuffledQuestions(shuffled);
   }, []);
+
   const currentQuestion: Question = shuffledQuestions[currentQuestionIndex] || {
     questionText: "",
     option: [],
     correctAnswer: "",
   };
+
   const handleAnswer = (selectedOption: string) => {
     if (selectedOption === currentQuestion.correctAnswer) {
       setScore(score + 1);
@@ -29,27 +31,27 @@ export default function StateMultipleChoiceQuizApp() {
     }
   };
 
-  return (
+  const FinalScore = (
     <View>
-      {quizFinished ? (
-        <View>
-          <Text>Quiz Finished</Text>
-          <Text>
-            Your Score: {score} Out of: {quizQuestions.length}
-          </Text>
-        </View>
-      ) : (
-        <View>
-          <Text>{currentQuestion.questionText}</Text>
-          {currentQuestion.option.map((option) => (
-            <Button
-              key={option}
-              title={option}
-              onPress={() => handleAnswer(option)}
-            />
-          ))}
-        </View>
-      )}
+      <Text>Quiz Finished</Text>
+      <Text>
+        Your score: {score} Out of: {quizQuestions.length}
+      </Text>
     </View>
   );
+
+  const Question = (
+    <View>
+      <Text>{currentQuestion.questionText}</Text>
+      {currentQuestion.option.map((option) => (
+        <Button
+          key={option}
+          title={option}
+          onPress={() => handleAnswer(option)}
+        />
+      ))}
+    </View>
+  );
+
+  return <View>{!quizFinished ? Question : FinalScore}</View>;
 }
