@@ -1,10 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { Text, View } from "react-native";
 import style from "../Styles";
 import StyledButton from "../ui-components/StyledButton";
-import { useNavigation } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { ScreenNames } from "../types/NavigationProps";
 
 export default function WelcomePage() {
   const navigation = useNavigation();

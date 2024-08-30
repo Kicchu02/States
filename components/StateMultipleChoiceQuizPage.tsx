@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, Button } from "react-native";
-import { Question } from "../types/QuizQuestions";
-import { quizQuestions } from "../types/QuizQuestions";
+import { Text, View } from "react-native";
+import style from "../Styles";
+import { Question, quizQuestions } from "../types/QuizQuestions";
+import { colors } from "../types/Themes";
+import ChoiceButton from "../ui-components/ChoiceButton";
 
 export default function StateMultipleChoiceQuizPage() {
   const [currentQuestionIndex, setCurrentQuestion] = useState<number>(0);
@@ -35,20 +37,22 @@ export default function StateMultipleChoiceQuizPage() {
 
   const FinalScore = (
     <View>
-      <Text>Quiz Finished</Text>
-      <Text>
-        Your score: {score} Out of: {shuffledQuestions.length}
+      <Text style={style.successTextHeaderStyle}>Quiz Finished</Text>
+      <Text style={style.successMessageStyle}>
+        Your score: {score} out of {shuffledQuestions.length}
       </Text>
     </View>
   );
 
   const Question = (
     <View>
-      <Text>{currentQuestion.questionText}</Text>
+      <Text style={style.questionTextStyle}>
+        {currentQuestion.questionText}
+      </Text>
       {currentQuestion.option.map((option) => (
-        <Button
+        <ChoiceButton
           key={option}
-          title={option}
+          text={option}
           onPress={() => handleAnswer(option)}
         />
       ))}
