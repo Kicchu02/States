@@ -4,6 +4,8 @@ interface Colors {
   softCoral: string;
   pastelBlue: string;
   glaucous: string;
+  jadeGreen: string;
+  neonGreenTranslucent: string;
 }
 
 export const colors: Colors = {
@@ -12,4 +14,6 @@ export const colors: Colors = {
   softCoral: "#FF6F61",
   pastelBlue: "#B3EBF2",
   glaucous: "#678dc6",
+  jadeGreen: "#00BB77",
+  neonGreenTranslucent: "#2CFF0533",
 };

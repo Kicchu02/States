@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import style from "../Styles";
 import { Question, quizQuestions } from "../types/QuizQuestions";
+import { colors } from "../types/Themes";
 import ChoiceButton from "../ui-components/ChoiceButton";
 
 export default function StateMultipleChoiceQuizPage() {
@@ -36,9 +37,9 @@ export default function StateMultipleChoiceQuizPage() {
 
   const FinalScore = (
     <View>
-      <Text>Quiz Finished</Text>
-      <Text>
-        Your score: {score} Out of: {shuffledQuestions.length}
+      <Text style={style.successTextHeaderStyle}>Quiz Finished</Text>
+      <Text style={style.successMessageStyle}>
+        Your score: {score} out of {shuffledQuestions.length}
       </Text>
     </View>
   );

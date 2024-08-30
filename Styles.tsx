@@ -38,6 +38,25 @@ const style = StyleSheet.create({
     color: colors.glaucous,
     fontWeight: "bold",
   },
+  successTextHeaderStyle: {
+    textAlign: "center",
+    fontSize: 35,
+    marginTop: 150,
+    marginBottom: 50,
+    color: colors.jadeGreen,
+    fontWeight: "bold",
+  },
+  successMessageStyle: {
+    color: colors.jadeGreen,
+    fontWeight: "bold",
+    fontSize: 20,
+    backgroundColor: colors.neonGreenTranslucent,
+    marginVertical: 10,
+    padding: 10,
+    borderRadius: 10,
+    width: "auto",
+    alignSelf: "center",
+  },
 });
 
 export default style;
